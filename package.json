@@ -1,0 +1,37 @@
+{
+  "name": "grapesjs-mjml",
+  "version": "1.0.4",
+  "description": "MJML Componenets integration in GrapesJS",
+  "main": "dist/index.js",
+  "scripts": {
+    "lint": "eslint src",
+    "lint:fix": "eslint src --fix",
+    "v:patch": "npm version patch -m \"Release v%s\"",
+    "build": "grapesjs-cli build --patch=false",
+    "start": "grapesjs-cli serve"
+  },
+  "files": [
+    "/dist",
+    "/locale"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/artf/grapesjs-mjml.git"
+  },
+  "keywords": [
+    "grapesjs",
+    "plugin",
+    "mjml",
+    "wysiwyg"
+  ],
+  "author": "Artur Arseniev",
+  "license": "BSD-3-Clause",
+  "dependencies": {
+    "mjml-browser": "^4.13.0"
+  },
+  "devDependencies": {
+    "eslint": "^8.23.0",
+    "grapesjs": "^0.20.1",
+    "grapesjs-cli": "^3.0.1"
+  }
+}

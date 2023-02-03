@@ -1,0 +1,11 @@
+.DS_Store
+private/
+node_modules/
+dist/
+locale/
+.eslintrc
+*.log
+_index.html
+.idea
+.vscode
+.github
