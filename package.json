@@ -1,0 +1,38 @@
+{
+  "name": "rapidus",
+  "version": "1.0.0",
+  "description": "A simple and east email template builder",
+  "main": "dist/index.js",
+  "scripts": {
+    "lint": "eslint src",
+    "lint:fix": "eslint src --fix",
+    "v:patch": "npm version patch -m \"Release v%s\"",
+    "build": "grapesjs-cli build --patch=false",
+    "start": "grapesjs-cli serve"
+  },
+  "files": [
+    "/dist",
+    "/locale"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Tejaaswini/rapidus.git"
+  },
+  "keywords": [
+    "grapesjs",
+    "rapidus",
+    "email-template",
+    "email-builder"
+  ],
+  "author": "Tejaaswini Narendran",
+  "license": "MIT",
+  "dependencies": {
+    "mjml-browser": "^4.13.0",
+    "react-router-dom": "^6.8.0"
+  },
+  "devDependencies": {
+    "eslint": "^8.23.0",
+    "grapesjs": "^0.20.1",
+    "grapesjs-cli": "^3.0.1"
+  }
+}
