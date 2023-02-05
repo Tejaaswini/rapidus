@@ -1,7 +1,7 @@
 {
   "name": "rapidus",
   "version": "1.0.0",
-  "description": "A simple and east email template builder",
+  "description": "A simple and easy email template builder",
   "main": "dist/index.js",
   "scripts": {
     "lint": "eslint src",
