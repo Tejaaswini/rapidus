@@ -1,0 +1,24 @@
+{
+  "name": "rapidus",
+  "version": "1.0.0",
+  "description": "A simple and east email template builder",
+  "main": "dist/grapespectre.min.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Tejaaswini/rapidus.git"
+  },
+  "scripts": {
+    "start": "grapesjs-cli serve",
+    "build": "grapesjs-cli build"
+  },
+  "keywords": [
+    "grapesjs",
+    "rapidus",
+    "email-template",
+    "email-builder"
+  ],
+  "devDependencies": {
+    "grapesjs-cli": "^4.0.1"
+  },
+  "license": "MIT"
+}
