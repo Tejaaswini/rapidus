@@ -16,7 +16,7 @@ export default (editor: grapesjs.Editor, opts: RequiredPluginOptions) => {
   const getI18nLabel = (label: string) => editor.I18n.t(`grapesjs-mjml.panels.buttons.${label}`);
 
 
-  // Add save button
+  // Add send email button
   Panels.addButton('options', {
     id: 'save-component',
       className: 'btn-save-component',
@@ -25,42 +25,24 @@ export default (editor: grapesjs.Editor, opts: RequiredPluginOptions) => {
       </svg>`,
       context: 'save-component',
       command(editor) {
-        editor.Modal.setTitle('Add custom component and save')
-          .setContent(`<textarea style="width:100%; height: 300px; background-color: #322931; color:#d5d3d5;"></textarea>
-          <button style="background-color: #52ad87; height: 40px; width: 100px; font-size: 16px; cursor: pointer;"><a href="/Users/tejaaswini.narendran/Desktop/rapidus/rapidus/demo/src/components/custom-components" download="cc.mjml">Save</a></button>`)
+        editor.Modal.setTitle('Send Email')
+          .setContent(`<form action="mailto:tejnaren07@gmail.com" method="post" enctype="text/plain"><textarea style="width:100%; height: 300px; background-color: #322931; color:#d5d3d5;">${cmdImportMjml}</textarea>
+          <button style="background-color: #52ad87; height: 40px; width: 100px; font-size: 16px; cursor: pointer;">Send</button></form>`)
           .open();
       },})
 
-  // Add save button - templates
-  Panels.addButton('options', {
-    id: cmdImportMjml,
-    command: cmdImportMjml,
-    attributes: { title: getI18nLabel('Select Templates') },
-    label: `<svg ${iconStyle} viewBox="0 0 24 24">
-        <path fill="currentColor" d="M5,20H19V18H5M19,9H15V3H9V9H5L12,16L19,9Z" />
-    </svg>`,
-  });
 
-
-  // Add email
+  // Add Import button
   Panels.addButton('options', {
-    id: 'save-email',
-      className: 'btn-save-email',
-      label: `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-send-fill" viewBox="0 0 16 16">
-      <path d="M15.964.686a.5.5 0 0 0-.65-.65L.767 5.855H.766l-.452.18a.5.5 0 0 0-.082.887l.41.26.001.002 4.995 3.178 3.178 4.995.002.002.26.41a.5.5 0 0 0 .886-.083l6-15Zm-1.833 1.89L6.637 10.07l-.215-.338a.5.5 0 0 0-.154-.154l-.338-.215 7.494-7.494 1.178-.471-.47 1.178Z"/>
-    </svg>`,
-      context: 'save-email',
+    id: 'import-figma',
+      className: 'btn-import-figma',
+      label: `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-files" viewBox="0 0 16 16">
+                <path d="M13 0H6a2 2 0 0 0-2 2 2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h7a2 2 0 0 0 2-2 2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zm0 13V4a2 2 0 0 0-2-2H5a1 1 0 0 1 1-1h7a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1zM3 4a1 1 0 0 1 1-1h7a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V4z"/>
+              </svg>`,
+      context: 'import-figma',
       command(editor) {
-        editor.Modal.setTitle('Add custom component and save')
-          .setContent(`<form>
-          <div class="form-group">
-            <label for="exampleInputEmail1">From</label>
-            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-            <label for="exampleInputEmail1">To</label>
-            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-            <label for="exampleInputEmail1">Body</label>
-            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-            <button style="background-color: #52ad87; height: 40px; width: 100px; font-size: 16px; cursor: pointer;">Send</button>`)
+        editor.Modal.setTitle('Import from Figma')
+          .setContent(`<div> Click on the button below to import your figma design into the editor. <br> <br> <a href="https://cannoli.app/dashboard/personal/files/import" target="_blank"><button style="background-color: #52ad87; height: 40px; width: 100px; font-size: 16px; cursor: pointer;">Import</button></a></div>`)
           .open();
       },})
 
