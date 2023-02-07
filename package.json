@@ -1,7 +1,7 @@
 {
-  "name": "rapidus",
-  "version": "1.0.0",
-  "description": "A simple and easy email template builder",
+  "name": "grapesjs-mjml",
+  "version": "1.0.4",
+  "description": "MJML Componenets integration in GrapesJS",
   "main": "dist/index.js",
   "scripts": {
     "lint": "eslint src",
@@ -16,27 +16,22 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/Tejaaswini/rapidus.git"
+    "url": "https://github.com/artf/grapesjs-mjml.git"
   },
   "keywords": [
     "grapesjs",
-    "rapidus",
-    "email-template",
-    "email-builder"
+    "plugin",
+    "mjml",
+    "wysiwyg"
   ],
-  "author": "Tejaaswini Narendran",
-  "license": "MIT",
+  "author": "Artur Arseniev",
+  "license": "BSD-3-Clause",
   "dependencies": {
-    "@sendgrid/mail": "^7.7.0",
-    "mjml-browser": "^4.13.0",
-    "react-router-dom": "^6.8.0"
+    "mjml-browser": "^4.13.0"
   },
   "devDependencies": {
     "eslint": "^8.23.0",
     "grapesjs": "^0.20.1",
-    "grapesjs-cli": "^3.0.1",
-    "ts-loader": "^9.4.2",
-    "webpack": "^5.75.0",
-    "webpack-cli": "^5.0.1"
+    "grapesjs-cli": "^3.0.1"
   }
 }

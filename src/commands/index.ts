@@ -24,7 +24,6 @@ export default (editor: grapesjs.Editor, opts: RequiredPluginOptions) => {
       const mjml = Commands.run(cmdGetMjml);
       return mjmlConvert(mjml, opts.fonts, opt);
   });
-  
 
   openExportMjml(editor, opts, cmdOpenExport);
   openImportMjml(editor, opts, cmdImportMjml);
