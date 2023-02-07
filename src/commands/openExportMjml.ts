@@ -36,9 +36,23 @@ export default (editor: grapesjs.Editor, opts: RequiredPluginOptions, cmdId: str
 
       if (!containerEl) {
         containerEl = document.createElement('div');
+        const btnSend = document.createElement('button');
+        btnSend.innerHTML = "Send Code as Email";
+        containerEl.appendChild(btnSend);
+        btnSend.classList.add("sendbtn");
         containerEl.style.display = 'flex';
         containerEl.style.justifyContent = 'space-between';
+        btnSend.style.cursor = 'pointer';
+        btnSend.style.backgroundColor = '#4CAF50';
         this.containerEl = containerEl;
+        // send email
+        btnSend.addEventListener('click', () => {
+          const mjml = Commands.run(cmdGetMjml);
+          const subject = "Campaign Code";
+          const body = mjml;
+          const mailto = `mailto:tejnaren07@gmail.com?subject=${subject}&body=${body}`;
+          window.open(mailto);
+        });
       }
 
       return containerEl;
