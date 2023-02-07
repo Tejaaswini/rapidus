@@ -15,41 +15,17 @@ export default (editor: grapesjs.Editor, opts: RequiredPluginOptions) => {
 
   const getI18nLabel = (label: string) => editor.I18n.t(`grapesjs-mjml.panels.buttons.${label}`);
 
-
-  // Add save button
+  // Add Import button
   Panels.addButton('options', {
-    id: 'save-component',
-      className: 'btn-save-component',
-      label: `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus-circle-fill" viewBox="0 0 16 16">
-        <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3v-3z"/>
-      </svg>`,
-      context: 'save-component',
+    id: 'import-figma',
+      className: 'btn-import-figma',
+      label: `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-files" viewBox="0 0 16 16">
+                <path d="M13 0H6a2 2 0 0 0-2 2 2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h7a2 2 0 0 0 2-2 2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zm0 13V4a2 2 0 0 0-2-2H5a1 1 0 0 1 1-1h7a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1zM3 4a1 1 0 0 1 1-1h7a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V4z"/>
+              </svg>`,
+      context: 'import-figma',
       command(editor) {
-        editor.Modal.setTitle('Add custom component and save')
-          .setContent(`<textarea style="width:100%; height: 300px; background-color: #322931; color:#d5d3d5;"></textarea>
-          <button style="background-color: #52ad87; height: 40px; width: 100px; font-size: 16px; cursor: pointer;"><a href="/Users/tejaaswini.narendran/Desktop/rapidus/rapidus/demo/src/components/custom-components" download="cc.mjml">Save</a></button>`)
-          .open();
-      },})
-
-  // Add email
-  Panels.addButton('options', {
-    id: 'save-email',
-      className: 'btn-save-email',
-      label: `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-send-fill" viewBox="0 0 16 16">
-      <path d="M15.964.686a.5.5 0 0 0-.65-.65L.767 5.855H.766l-.452.18a.5.5 0 0 0-.082.887l.41.26.001.002 4.995 3.178 3.178 4.995.002.002.26.41a.5.5 0 0 0 .886-.083l6-15Zm-1.833 1.89L6.637 10.07l-.215-.338a.5.5 0 0 0-.154-.154l-.338-.215 7.494-7.494 1.178-.471-.47 1.178Z"/>
-    </svg>`,
-      context: 'save-email',
-      command(editor) {
-        editor.Modal.setTitle('Add custom component and save')
-          .setContent(`<form>
-          <div class="form-group">
-            <label for="exampleInputEmail1">From</label>
-            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-            <label for="exampleInputEmail1">To</label>
-            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-            <label for="exampleInputEmail1">Body</label>
-            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-            <button style="background-color: #52ad87; height: 40px; width: 100px; font-size: 16px; cursor: pointer;">Send</button>`)
+        editor.Modal.setTitle('Import from Figma')
+          .setContent(`<div> Click on the button below to import your figma design into the editor. <br> <br> <a href="https://cannoli.app/dashboard/personal/files/import" target="_blank"><button style="background-color: #52ad87; height: 40px; width: 100px; font-size: 16px; cursor: pointer;">Import</button></a></div>`)
           .open();
       },})
 
@@ -80,6 +56,25 @@ export default (editor: grapesjs.Editor, opts: RequiredPluginOptions) => {
         <path fill="currentColor" d="M10.5 18H18V20H10.5C6.91 20 4 17.09 4 13.5S6.91 7 10.5 7H16.17L13.08 3.91L14.5 2.5L20 8L14.5 13.5L13.09 12.09L16.17 9H10.5C8 9 6 11 6 13.5S8 18 10.5 18Z" />
     </svg>`,
   });
+
+  // Add wiki button
+  Panels.addButton('options', {
+    id: 'wiki-component',
+      className: 'wiki-save-component',
+      label: `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-tools" viewBox="0 0 16 16">
+                <path d="M1 0 0 1l2.2 3.081a1 1 0 0 0 .815.419h.07a1 1 0 0 1 .708.293l2.675 2.675-2.617 2.654A3.003 3.003 0 0 0 0 13a3 3 0 1 0 5.878-.851l2.654-2.617.968.968-.305.914a1 1 0 0 0 .242 1.023l3.27 3.27a.997.997 0 0 0 1.414 0l1.586-1.586a.997.997 0 0 0 0-1.414l-3.27-3.27a1 1 0 0 0-1.023-.242L10.5 9.5l-.96-.96 2.68-2.643A3.005 3.005 0 0 0 16 3c0-.269-.035-.53-.102-.777l-2.14 2.141L12 4l-.364-1.757L13.777.102a3 3 0 0 0-3.675 3.68L7.462 6.46 4.793 3.793a1 1 0 0 1-.293-.707v-.071a1 1 0 0 0-.419-.814L1 0Zm9.646 10.646a.5.5 0 0 1 .708 0l2.914 2.915a.5.5 0 0 1-.707.707l-2.915-2.914a.5.5 0 0 1 0-.708ZM3 11l.471.242.529.026.287.445.445.287.026.529L5 13l-.242.471-.026.529-.445.287-.287.445-.529.026L3 15l-.471-.242L2 14.732l-.287-.445L1.268 14l-.026-.529L1 13l.242-.471.026-.529.445-.287.287-.445.529-.026L3 11Z"/>
+          </svg>`,
+      context: 'wiki-component',
+      command(editor) {
+        editor.Modal.setTitle('Add custom component and save')
+          .setContent(`<textarea style="width:100%; height: 80px; background-color: #322931; color:#d5d3d5;">
+
+          Want to know more about the product?
+          Read our wiki page! :D
+          </textarea>
+          <a href="https://tejnaren07.gitbook.io/rapidus/"><button style="background-color: #3b9cc4; height: 40px; width: 100px; font-size: 16px; cursor: pointer;">Wiki</button></a>`)
+          .open();
+      },})
 
   // Update devices
   if (opts.resetDevices) {
