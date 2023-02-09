@@ -2,7 +2,6 @@
 import type grapesjs from 'grapesjs';
 import { cmdGetMjml, cmdGetMjmlToHtml } from '.';
 import { RequiredPluginOptions } from '..';
-
 export default (editor: grapesjs.Editor, opts: RequiredPluginOptions, cmdId: string) => {
   const { Commands } = editor;
 
@@ -36,14 +35,35 @@ export default (editor: grapesjs.Editor, opts: RequiredPluginOptions, cmdId: str
 
       if (!containerEl) {
         containerEl = document.createElement('div');
+
+        // send email
         const btnSend = document.createElement('button');
-        btnSend.innerHTML = "Send Code as Email";
-        containerEl.appendChild(btnSend);
+        btnSend.innerHTML = "Share code";
         btnSend.classList.add("sendbtn");
+        containerEl.appendChild(btnSend);
+
+        // save template
+        const saveTemplate = document.createElement('button');
+        saveTemplate.innerHTML = "Save Template";
+        containerEl.appendChild(saveTemplate);
+        saveTemplate.classList.add("saveTemplate");
+
+        // style
         containerEl.style.display = 'flex';
         containerEl.style.justifyContent = 'space-between';
+
+        // style - send email
         btnSend.style.cursor = 'pointer';
-        btnSend.style.backgroundColor = '#4CAF50';
+        btnSend.style.backgroundColor = '#DFAA20';
+        btnSend.style.position = 'absolute';
+        btnSend.style.right = '0';
+        btnSend.style.top = '0';
+        btnSend.style.height = '10%';
+        btnSend.style.width = '15%';
+
+        // style - save template
+        saveTemplate.style.cursor = 'pointer';
+        saveTemplate.style.backgroundColor = '#4CAF50';
         this.containerEl = containerEl;
         // send email
         btnSend.addEventListener('click', () => {
@@ -53,6 +73,15 @@ export default (editor: grapesjs.Editor, opts: RequiredPluginOptions, cmdId: str
           const mailto = `mailto:tejnaren07@gmail.com?subject=${subject}&body=${body}`;
           window.open(mailto);
         });
+        saveTemplate.addEventListener('click', () => {
+          const mjml = Commands.run(cmdGetMjml);
+          var bb = new Blob([mjml ], { type: 'mjml/text' });
+          var a = document.createElement('a');
+          a.download = 'template.mjml';
+          a.href = window.URL.createObjectURL(bb);
+          a.click();
+        });
+        
       }
 
       return containerEl;

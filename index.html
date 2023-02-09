@@ -58,13 +58,24 @@
     .card-design img {
       width: fit-content;
       padding-left: 20px;
+
+    }
+
+    .template-card-design {
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.6);
+      transition: 0.3s;
+      max-width: 150px;
+      height: 150px;
+      border-radius: 15px;
+      margin-top: 20px;
+      cursor: pointer;
     }
   </style>
 </head>
 
 <body>
 
-  <div id="btn">
+  <div id="landing-page">
     <h1 style="text-align: center; margin-top:150px;">Please select a project</h1>
     <div class="align-cards">
       <div>
@@ -95,6 +106,21 @@
   </div>
   </div>
 
+  <div id="template" style="display: none;" class="template">
+    <h1 style="text-align: center; margin-top:150px;">Create/Select a new component</h1>
+    <div class="align-cards">
+      <div class="template-card-design">
+        <img src="https://static.vecteezy.com/system/resources/thumbnails/000/582/976/small/vector61-716-01.jpg"
+          alt="add new" height="120px" paddingTop="20px" style="margin-top:18px;">
+          <p style="margin-left:25px !important">Create new</p>
+      </div>
+      <!-- <div class="template-card-design">
+        <img src="https://icones.pro/wp-content/uploads/2021/06/icone-fichier-document-orange.png"
+          alt="add new" height="120px" paddingTop="20px" style="margin-top:18px;">
+          <p style="margin-left:25px !important">6th Feb '22</p>
+      </div> -->
+    </div>
+  </div>
   <div id="gjs" style="height:0px; overflow:hidden; display: none;">
     <mjml>
       <mj-head>
@@ -104,6 +130,22 @@
       </mj-body>
     </mjml>
   </div>
+
+
+  <script type="text/javascript">
+    document.getElementById("landing-page").onclick = function () {
+      document.getElementById("landing-page").style.display = "none";
+      document.getElementById("template").style.display = "block";
+      document.getElementById("gjs").style.display = "none";
+    }
+
+    document.getElementById("template").onclick = function () {
+      document.getElementById("template").style.display = "none";
+      document.getElementById("landing-page").style.display = "none";
+      document.getElementById("gjs").style.display = "block";
+    }
+
+  </script>
 
 
   <script type="text/javascript">

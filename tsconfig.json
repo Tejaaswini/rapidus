@@ -1,4 +1,4 @@
 {
     "extends": "./node_modules/grapesjs-cli/src/template/tsconfig.json",
-    "include": ["src"]
+    "include": ["src", "src/commands/firebase.utils.js", "src/commands/firebase.utils.js"]
 }

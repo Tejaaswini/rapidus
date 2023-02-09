@@ -3,6 +3,7 @@ import { RequiredPluginOptions } from '..';
 import openImportMjml from './openImportMjml';
 import openExportMjml from './openExportMjml';
 import { mjmlConvert } from '../components/utils';
+import firebase from '../components/firebase_utils';
 
 export const cmdDeviceDesktop = 'set-device-desktop';
 export const cmdDeviceTablet = 'set-device-tablet';
@@ -11,6 +12,7 @@ export const cmdImportMjml = 'mjml-import';
 export const cmdExportMjml = 'mjml-export';
 export const cmdGetMjml = 'mjml-code';
 export const cmdGetMjmlToHtml = 'mjml-code-to-html';
+
 
 export default (editor: grapesjs.Editor, opts: RequiredPluginOptions) => {
   const { Commands } = editor;
