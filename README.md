@@ -1,5 +1,5 @@
 ## RAPIDUS
-### A simple and east email template builder
+### A simple and easy email template builder
 ______________________________________________________
 
 ### Disrupt 2022
